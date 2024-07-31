@@ -1,14 +1,16 @@
+import Link from "next/link";
+
 const CategoriesList = () => {
   const categories = [];
   for (let index = 0; index < 10; index++) {
     categories.push(
       <li>
-        <a
+        <Link
           href="#"
-          className="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
+          className="m-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
         >
           - AWS
-        </a>
+        </Link>
       </li>
     );
   }

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,18 +15,18 @@ export default function Home() {
             dignissimos id quam vel!
           </p>
           <div className="flex justify-center lg:justify-start mt-6">
-            <a
+            <Link
               className="px-4 py-3 bg-gray-900 text-gray-200 text-xs font-semibold rounded hover:bg-gray-800"
               href="#"
             >
               Get Started
-            </a>
-            <a
+            </Link>
+            <Link
               className="mx-4 px-4 py-3 bg-gray-300 text-gray-900 text-xs font-semibold rounded hover:bg-gray-400"
               href="#"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>
