@@ -7,6 +7,10 @@ const thisLinks = [
 ];
 
 const Navbar = () => {
+  // temporary...
+  const isAdmin = false;
+  const isLogin = false;
+
   return (
     <nav className="px-6 py-4 bg-white shadow">
       <div className="container flex flex-col mx-auto md:flex-row md:items-center md:justify-between">
@@ -31,6 +35,16 @@ const Navbar = () => {
           {thisLinks.map((link, index) => (
             <NavBarLink item={link} key={index} />
           ))}
+          {isLogin ? (
+            <>
+              {isAdmin && (
+                <NavBarLink item={{ title: "Admin", href: "/admin" }} />
+              )}
+              <button className="px-2 py-1 bg-gray-400 rounded-md text-sm font-semibold">Logout</button>
+            </>
+          ) : (
+            <NavBarLink item={{ title: "Login", href: "/login" }} />
+          )}
         </div>
       </div>
     </nav>
