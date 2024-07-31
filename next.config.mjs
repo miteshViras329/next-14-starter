@@ -9,7 +9,7 @@ const nextConfig = {
         pathname: "/*",
       },
     ],
-    domains: ['flowbite.s3.amazonaws.com'],
+    domains: ["flowbite.s3.amazonaws.com", "randomuser.me"],
   },
 };
 
