@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import AuthorList from "@/components/blogs/AuthorList";
 import BlogSingle from "@/components/blogs/BlogSingle";
 import CategoriesList from "@/components/blogs/CategoriesList";
+
+export const metadata: Metadata = {
+  title: "Blog Listing",
+  description: "all blog listings are here.",
+};
 
 const BlogPage = () => {
   // Create an array to hold the BlogSingle components

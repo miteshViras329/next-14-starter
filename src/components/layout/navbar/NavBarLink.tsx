@@ -6,8 +6,6 @@ import React from "react";
 
 const NavBarLink = ({ item }: any) => {
   const pathName = usePathname();
-  const searchParams = useParams();
-  console.log(searchParams);
   return (
     <Link
       href={item.href}

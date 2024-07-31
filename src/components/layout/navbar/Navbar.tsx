@@ -1,4 +1,6 @@
+"use client";
 import NavBarLink from "@/components/layout/navbar/NavBarLink";
+import { useState } from "react";
 
 const thisLinks = [
   { title: "Home", href: "/" },
@@ -10,6 +12,7 @@ const Navbar = () => {
   // temporary...
   const isAdmin = false;
   const isLogin = false;
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className="px-6 py-4 bg-white shadow">
@@ -23,6 +26,7 @@ const Navbar = () => {
           <div>
             <button
               type="button"
+              onClick={() => setOpen((prevVal) => !prevVal)}
               className="block text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none md:hidden"
             >
               <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
@@ -31,7 +35,11 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <div className="flex-col hidden md:flex md:flex-row md:-mx-4">
+        <div
+          className={`flex-col flex mt-2 md:mt-0 md:flex-row md:-mx-4  ${
+            !open ? "hidden md:flex" : ""
+          }`}
+        >
           {thisLinks.map((link, index) => (
             <NavBarLink item={link} key={index} />
           ))}
@@ -40,7 +48,9 @@ const Navbar = () => {
               {isAdmin && (
                 <NavBarLink item={{ title: "Admin", href: "/admin" }} />
               )}
-              <button className="px-2 py-1 bg-gray-400 rounded-md text-sm font-semibold">Logout</button>
+              <button className="px-2 py-1 bg-gray-400 rounded-md text-sm font-semibold">
+                Logout
+              </button>
             </>
           ) : (
             <NavBarLink item={{ title: "Login", href: "/login" }} />

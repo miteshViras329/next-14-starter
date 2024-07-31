@@ -15,16 +15,17 @@ export default function CommonLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="overflow-x-hidden bg-gray-100 text-black">
-          <Navbar />
-          <div className="px-6 py-8">{children}</div>
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <body className={inter.className}>
+          <div className="overflow-x-hidden bg-gray-100 text-black">
+            <Navbar />
+            <div className="px-6 py-8">{children}</div>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </>
   );
 }
