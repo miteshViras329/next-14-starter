@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavBarLink from "@/components/layout/navbar/NavBarLink";
 
 const thisLinks = [
   { title: "Home", href: "/" },
@@ -29,13 +29,7 @@ const Navbar = () => {
         </div>
         <div className="flex-col hidden md:flex md:flex-row md:-mx-4">
           {thisLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.href}
-              className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0"
-            >
-              {link.title}
-            </Link>
+            <NavBarLink item={link} key={index} />
           ))}
         </div>
       </div>
